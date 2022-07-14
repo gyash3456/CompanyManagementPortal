@@ -1,0 +1,75 @@
+.Welcome{
+    background-color: #b2b9be;
+    height:400px ;
+    padding-top: 50px;
+    
+
+}
+
+.WelcomeSection{
+    background-color: #dcebff;
+    border-radius: 80px;
+    height: 300px;
+    padding-top: 10px;
+    width: 90%;
+    margin:auto
+  
+    
+   
+    
+}
+
+.Welcomeclass{
+    margin-left: 63px;
+    
+    padding-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+    /* margin-left: 80%; */
+.Image {
+    /* margin-left: 80%; */
+    width: 30%;
+    height: 20%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4%;
+}
+    
+.Image img{
+    width: 245px;
+    height: 230px;
+    border-radius: 500px;
+    overflow: hidden;
+    margin: 3% 1%;
+    
+    
+}
+
+.WelcomeNote{
+
+width: 70%;
+
+
+}
+
+.head1{
+    font-family: sikta small;
+    font-size: 75px;
+    font-weight: 500;
+    color: black;
+    padding-top: 1%;
+    margin-bottom: 0.7rem;
+}
+
+.text1{
+    font-family: sikta small;
+    color: black;
+    font-weight: 600;
+    font-size: 24px;
+    word-spacing: 3px;
+
+}
