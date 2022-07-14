@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Edu+SA+Beginner&family=Montserrat&family=Noto+Sans:wght@700&family=Open+Sans:wght@300&family=Piazzolla:ital,opsz,wght@1,8..30,800&family=Redressed&display=swap');
+
+.main{
+position: relative;
+}
+
+.Emp-card{
+    position: absolute;
+    color:white;
+    top: 20%;
+    display: flex;
+    justify-content:space-around;
+    width:100%;
+    margin:auto;
+
+}
+
+
+.birthday{
+    /* border: 4px solid green; */
+    height: 460px;
+    width:400px;
+    background-color: #3A3B7A;
+    /* background-image: linear-gradient( rgba(235, 231, 231, 0.932), rgb(2, 6, 54)); */
+    border-radius: 20px;
+    padding: 0px 20px;
+}
+
+#background-video {
+    width:100%;
+  }
+
+
+.birt-head{
+    background-color: #EFC20D;
+    border-radius: 7px;
+    /* width: 100%; */
+    margin: 12px 40px 0px 40px ;
+    padding-top:6px;
+    height: 5vh;
+}
+
+.birt-head>p{
+    color: white;
+    font-size: 15px;
+    font-family: sikta small;
+    align-items: center;
+    display:flex;
+    justify-content: center;
+    margin:0px;
+    font-weight: 500;
+    
+    /* text-align: center; */
+}
+
+.yes{
+    height:350px;
+    width: 300px;
+    color:antiquewhite;
+}
+
+.card{
+    margin: 20px 20px 0px 20px;
+    padding: 6%;
+    height: 348px;
+    
+
+}
+
+.card-body {
+    padding: 0rem;
+}
+.card-img-top{
+    width: 60%;
+    margin: auto;
+    height: 170px;
+    border-radius: 30px;
+
+}
+
+.aaa{
+    color: black !important;
+    font-size: 30px;
+    font-weight: 200;
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: 'Dancing Script', cursive;
+    line-height: 29px;
+    padding-top: 10px;
+    width: 200px;
+    margin: auto;
+    padding-bottom: 10px;
+}
+
+.bbb{
+    color: rgb(83, 226, 236) !important;
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0px;
+    /* padding-top: 10px; */
+    padding-bottom: 10px;
+}
+
+.ccc{
+    color: black !important;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+.kkk{
+    color: black !important;
+    font-size: 25px;
+    font-weight: 600;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 25px;
+    margin: 0px;
+}
+
+.nnn{
+    color: black !important;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.mmm{
+    color: white !important;
+    font-size: 10px;
+    font-weight: 500;
+    width: 45%;
+    margin: auto;
+    padding-top:6px;
+}
+
+.second{
+    width: 85%;
+    margin: auto;
+    height: 215px;
+    border-radius: 30px;
+}
+
+span.test2 {
+    writing-mode: vertical-lr;
+    /* margin-top:85%;  */
+    top: 47%;
+    position: absolute;
+    transform: rotate(180deg);
+    margin-left:-7px;
+    letter-spacing: 6px;
+}
+
+span.test1 {
+    writing-mode: vertical-lr;
+    /* margin-top:85%;  */
+    /* top: 70%; */
+    left: 563px;
+    top: 2%;
+    letter-spacing: 6px;
+    position: absolute;
+}
+.ver-text{
+    position: relative;
+    color:white;
+    top: 20%;
+    display: flex;
+    margin: 0px;
+}
+

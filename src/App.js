@@ -5,6 +5,7 @@ import ResetPassword from './components/ResetPassword';
 import Navbar from './components/Navbar';
 import Carousel from './components/Carousel';
 import WelcomeSection from './components/WelcomeSection';
+import Greetings from './components/Greetings';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
     <Navbar/>
     <Carousel/>
     <WelcomeSection/>
+    <Greetings/>
     </>
   );
 }
