@@ -2,3 +2,22 @@
     width: 100%;
 }
 
+/* .carousel-control-next, .carousel-control-prev {
+    width: 3%;
+} */
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    width: 96px;
+    height: 34px;
+    /* background-color: black; */
+    color: black;
+}
+
+.carousel-control-prev{
+    left:1%;
+    width: 3%;
+}
+.carousel-control-next{
+    right: 1%;
+    width: 3%;
+}

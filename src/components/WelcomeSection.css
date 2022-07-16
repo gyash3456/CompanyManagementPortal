@@ -1,7 +1,14 @@
+@media only screen and (max-width: 600px) {
+    .Welcomeclass{
+        flex-wrap: wrap-reverse;
+    }
+  }
+
+
 .Welcome{
     background-color: #b2b9be;
-    height:400px ;
     padding-top: 50px;
+    padding-bottom: 2rem;
     
 
 }
@@ -9,10 +16,9 @@
 .WelcomeSection{
     background-color: #dcebff;
     border-radius: 80px;
-    height: 300px;
     padding-top: 10px;
     width: 90%;
-    margin:auto
+    margin:auto;
   
     
    
@@ -32,8 +38,8 @@
     /* margin-left: 80%; */
 .Image {
     /* margin-left: 80%; */
-    width: 30%;
-    height: 20%;
+    /* width: 30%;
+    height: 20%; */
     display: flex;
     justify-content: flex-end;
     margin-right: 4%;

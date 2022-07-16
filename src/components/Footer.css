@@ -1,0 +1,20 @@
+footer{
+    background-color: rgb(0, 0, 0);
+   
+    text-align: center;
+    padding: 21px;
+    display:flex;
+    justify-content: center;
+}
+
+
+
+.insta{
+    width:100%;
+    filter:brightness(0) invert(1);
+    
+}
+
+.space{
+    margin: 6px;
+}

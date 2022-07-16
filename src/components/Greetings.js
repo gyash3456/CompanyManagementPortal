@@ -3,6 +3,7 @@ import './Greetings.css';
 import video from './../assets/video.mp4';
 import pic1 from './../assets/Yash2.png';
 import pic2 from './../assets/saqib1.png';
+import {Slider} from './Slider';
 
 
 function Greetings() {
@@ -55,6 +56,7 @@ function Greetings() {
            
          </div>
          </div>
+         <Slider />
 
       {/* <div class="crousel">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
