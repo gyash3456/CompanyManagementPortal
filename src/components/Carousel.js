@@ -6,7 +6,7 @@ import pic2 from './../assets/snow.PNG';
 
 function Carousel() {
   return (
-    <div class="crousel">
+    <div class="carousel">
       <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active p-0">

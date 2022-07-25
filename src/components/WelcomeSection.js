@@ -10,7 +10,6 @@ function WelcomeSection() {
       <div class="WelcomeNote">
         <p class="head1">
           Hi,Vikas
-      
         </p>
         <p class="text1">
           This is your Employee management dashboard . Look around and act.

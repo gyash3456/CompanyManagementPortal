@@ -23,7 +23,7 @@ function Navbar() {
           <a class="dropdown-item" href="#">Pay Slip</a>
           <a class="dropdown-item" href="#">Employee Referral Program</a>
           <a class="dropdown-item" href="#">Reimbursement</a>
-          <a class="dropdown-item" href="#">Fedback</a>
+          <a class="dropdown-item" href="#">Feedback</a>
         </div>
       </li>
       <li class="nav-item">
@@ -46,9 +46,6 @@ function Navbar() {
       <li class="nav-item dropdown">
         <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <img src= {pic2} class="rounded-circle" alt="Avatar"  />
-
-{/* <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle" style="width: 150px;"
-  alt="Avatar" /> */}
         </a>
         <div class="dropdown-menu user-logo" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Name</a>

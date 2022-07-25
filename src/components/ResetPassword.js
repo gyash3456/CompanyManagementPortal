@@ -4,7 +4,7 @@ import pic from './../assets/mlelogo.png'
 import { useState } from 'react'
 
 function ResetPassword() {
-  const initialValues = { username: "", email: "", password: "" };
+  const initialValues = { password: "", confirmPassword: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors,setFormErrors]= useState({});
   const [isSubmit,setIsSubmit]=useState(false);
@@ -39,24 +39,23 @@ function ResetPassword() {
   const validate=(values)=>{
     const errors={};
     const regexpassword=/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    const regexusername=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-    if(!values.username){
-      errors.username="Username is required";
-    }
-    else if(!regexusername.test(values.username)){
-      errors.username="This is not a valid email"; 
-    }
+    
     if(!values.password){
       errors.password="Password is required";
     }
+
     else if(!(regexpassword.test(values.password))){
-      errors.password="Password should contain special characters"
+      errors.password="Password should contain special characters";
      }
     else if(values.password.length<4){
-     errors.password="Password is too short"
+     errors.password="Password is too short";
     }
     else if(values.password.length>10){
-      errors.password="Password cannot exceed more than 10 characters"
+      errors.password="Password cannot exceed more than 10 characters";
+     }
+    
+     if (values.password != values.confirmPassword) {
+      errors.confirmPassword="Password is not matched";
      }
      
 
@@ -80,18 +79,16 @@ function ResetPassword() {
 
 
             <i className=" align-middle fa fa-user icon fa-lg mt-7"></i>
-            <input className="input-field" placeholder='Enter new password' type="text" name="username"value={formValues.username} onChange={handleChange}></input>
-            <p>{formErrors.username}</p>
+            <input className="input-field" placeholder='Enter new password' type="password" name="password"value={formValues.password} onChange={handleChange}></input>
+            <p>{formErrors.password}</p>
 
             <br />
 
             <i className="fa fa-lock icon fa-lg"></i>
-            <input className='input-field' type="password"placeholder='Confirm new password'name="password"value={formValues.password} onChange={handleChange}></input>
-            <p>{formErrors.password}</p>
+            <input className='input-field' type="password"placeholder='Confirm new password'name="confirmPassword"value={formValues.confirmpassword} onChange={handleChange}></input>
+            <p>{formErrors.confirmPassword}</p>
 
           </div>
-
-          <div className='forget'><u>Forgot Password?</u></div>
 
           <div><button  className="btn btn-primary">Login</button></div>
 

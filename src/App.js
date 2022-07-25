@@ -16,7 +16,7 @@ function App() {
     <Navbar/>
     <Carousel/>
     <WelcomeSection/>
-    {/* <Greetings/> */}
+    <Greetings/>
     <Footer/>
     </>
   );

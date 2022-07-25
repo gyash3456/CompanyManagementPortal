@@ -2,6 +2,11 @@
     .Welcomeclass{
         flex-wrap: wrap-reverse;
     }
+    .head1{
+        display: flex;
+        margin: 0px;
+        width:60%;
+    }
   }
 
 
@@ -9,6 +14,7 @@
     background-color: #b2b9be;
     padding-top: 50px;
     padding-bottom: 2rem;
+    padding-left: 0px;
     
 
 }
@@ -28,14 +34,12 @@
 .Welcomeclass{
     margin-left: 63px;
     
-    padding-top: 1rem;
+    padding-top: 0rem;
     display: flex;
     justify-content: space-between;
     
 }
 
-
-    /* margin-left: 80%; */
 .Image {
     /* margin-left: 80%; */
     /* width: 30%;
@@ -50,16 +54,11 @@
     height: 230px;
     border-radius: 500px;
     overflow: hidden;
-    margin: 3% 1%;
-    
-    
+    margin: 3% 1%;  
 }
 
 .WelcomeNote{
-
-width: 70%;
-
-
+width: 100%;
 }
 
 .head1{
@@ -77,5 +76,4 @@ width: 70%;
     font-weight: 600;
     font-size: 24px;
     word-spacing: 3px;
-
 }
