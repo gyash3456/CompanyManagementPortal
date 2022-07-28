@@ -32,7 +32,7 @@ function Greetings() {
                                             <img class="d-block card-img-top p-0 " src={pic1} alt="First slide" />
                                             <div class="card-body ">
                                                 <p class="card-text aaa">HAPPY BIRTHDAY</p>
-                                                <p class="card-text bbb">NAME:-Yash Gupta</p>
+                                                <p class="card-text bbb">NAME:-YASH GUPTA</p>
                                                 <p class="card-text ccc">DATE:-19-04-1995</p>
                                             </div>
 
@@ -42,7 +42,7 @@ function Greetings() {
                                             <img class="d-block card-img-top p-0" src={pic2} alt="Second slide" />
                                             <div class="card-body ">
                                                 <p class="card-text aaa">HAPPY BIRTHDAY</p>
-                                                <p class="card-text bbb">NAME:-Saqib</p>
+                                                <p class="card-text bbb">NAME:-SAQIB</p>
                                                 <p class="card-text ccc">DATE:-22-08-1996</p>
                                             </div>
                                         </div>

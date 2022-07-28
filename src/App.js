@@ -7,17 +7,17 @@ import Carousel from './components/Carousel';
 import WelcomeSection from './components/WelcomeSection';
 import Greetings from './components/Greetings';
 import Footer from './components/Footer';
+import { BrowserRouter , Routes, Route, Link , Switch} from 'react-router-dom';
+import LandingPage from './components/LandingPage';
 
 function App() {
   return (
     <>
-    {/* <Login /> */}
-    {/* <ResetPassword /> */}
-    <Navbar/>
-    <Carousel/>
-    <WelcomeSection/>
-    <Greetings/>
-    <Footer/>
+      <Routes>
+       <Route exact path="/" element={<Login/>}/>
+       <Route exact path="/resetpassword" element={<ResetPassword/>}/>
+       <Route exact path="/landingpage" element={<LandingPage/>}/>
+    </Routes>
     </>
   );
 }

@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
-import './login.css'
-import pic from './../assets/mlelogo.png'
-import { useState } from 'react'
+import React, { useEffect } from 'react';
+import './login.css';
+import pic from './../assets/mlelogo.png';
+import { useState } from 'react';
+import {Link } from 'react-router-dom'
 
 function Login() {
   const initialValues = { username: "", email: "", password: "" };
@@ -91,9 +92,13 @@ function Login() {
 
           </div>
 
-          <div className='forget'><u>Forgot Password?</u></div>
+          <div className='forget'>
+            <Link to='/resetpassword'>Forgot Password?</Link>
+            </div>
 
-          <div><button  className="btn btn-primary">Login</button></div>
+          <div>
+            <Link to='/landingpage' className="btn btn-primary">Login</Link>
+            </div>
 
 
         </div>
