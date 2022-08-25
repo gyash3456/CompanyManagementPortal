@@ -2,9 +2,19 @@ import React from 'react';
 import './Navbar.css'
 import pic from './../assets/mlename.png';
 import pic2 from './../assets/person-circle.svg';
+import {useParams} from "react-router-dom";
 
 
 function Navbar() {
+
+  const{role}=useParams();
+  let enable;
+  if(role=='admin'){
+   enable='block';
+  }
+  else{
+    enable ='none';
+  }
   return (
     <div>
       <nav class="navbar navbar-expand-lg navbar-light">
@@ -50,6 +60,7 @@ function Navbar() {
         <div class="dropdown-menu user-logo" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Name</a>
           <a class="dropdown-item" href="#">Change Password</a>
+          <a class="dropdown-item" href="#"style={{display:`${enable}`}}>Employee Details</a>
           <a class="dropdown-item" href="#">Logout</a>
         </div>
       </li>

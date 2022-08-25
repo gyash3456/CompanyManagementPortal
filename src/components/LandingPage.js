@@ -3,6 +3,7 @@ import Carousel from './Carousel';
 import WelcomeSection from './WelcomeSection';
 import Greetings from './Greetings';
 import Footer from './Footer';
+import ResetPassword from './ResetPassword';
 
 
 function LandingPage() {
@@ -12,6 +13,7 @@ function LandingPage() {
     <Carousel/>
     <WelcomeSection/>
     <Greetings/>
+    <ResetPassword/>
     <Footer/>
     </>
   );

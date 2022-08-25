@@ -2,18 +2,53 @@ import React, { useEffect } from 'react';
 import './login.css';
 import pic from './../assets/mlelogo.png';
 import { useState } from 'react';
-import {Link } from 'react-router-dom'
+import {Link,useNavigate } from 'react-router-dom';
+import base_url from '../api/bootapi';
+import axios from 'axios';
+import { useLocalState } from './util/useLocalStorage';
 
 function Login() {
   const initialValues = { username: "", email: "", password: "" };
+  const [jwt,setJwt] = useLocalState("","jwt");
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors,setFormErrors]= useState({});
   const [isSubmit,setIsSubmit]=useState(false);
+  const [isAuthenticated,setIsAuthenticated]= useState(false);
+  const navigate=useNavigate();
 
   useEffect(()=>{
-    console.log(formErrors)
+    // console.log(formErrors)
+    // console.log(formValues);
     if (Object.keys(formErrors).length ===0 && isSubmit) {
-      // console.log(formErrors)
+      {
+        axios.post(`api/auth/login`, {
+          // firstName: 'Fred',
+          // lastName: 'Flintstone'
+          username:`${formValues.username}`,
+          password:`${formValues.password}`
+        })
+        .then(function (response) {
+            
+          const role=response.data.authorities[0].authority
+          if(role=='ADMIN'){
+            navigate('/landingpage/admin');
+          }
+          else{
+            navigate('/landingpage/user');
+          }
+          console.log(isAuthenticated);
+        })
+        .catch(function (error) {
+          const errors={}
+          console.log(error.response.status);
+          errors.invalidCred="Unauthorized Acess";
+          setFormErrors(errors);
+          formValues.username='';
+          formValues.password='';
+          
+        });
+      }
+      
      
     }
   },[formErrors])
@@ -34,6 +69,7 @@ function Login() {
     setFormErrors(validate(formValues));
     // console.log(formErrors);
     setIsSubmit(true); 
+    
   }
   
 
@@ -44,21 +80,21 @@ function Login() {
     if(!values.username){
       errors.username="Username is required";
     }
-    else if(!regexusername.test(values.username)){
-      errors.username="This is not a valid email"; 
-    }
+    // else if(!regexusername.test(values.username)){
+    //   errors.username="This is not a valid email"; 
+    // }
     if(!values.password){
       errors.password="Password is required";
     }
-    else if(!(regexpassword.test(values.password))){
-      errors.password="Password should contain special characters"
-     }
-    else if(values.password.length<4){
-     errors.password="Password is too short"
-    }
-    else if(values.password.length>10){
-      errors.password="Password cannot exceed more than 10 characters"
-     }
+    // else if(!(regexpassword.test(values.password))){
+    //   errors.password="Password should contain special characters"
+    //  }
+    // else if(values.password.length<4){
+    //  errors.password="Password is too short"
+    // }
+    // else if(values.password.length>10){
+    //   errors.password="Password cannot exceed more than 10 characters"
+    //  }
      
 
     return errors;
@@ -97,8 +133,10 @@ function Login() {
             </div>
 
           <div>
-            <Link to='/landingpage' className="btn btn-primary">Login</Link>
+            {/* <Link to='/landingpage' className="btn btn-primary">Login</Link> */}
+            <button className="btn btn-primary">Login</button>
             </div>
+            <p>{formErrors.invalidCred}</p>
 
 
         </div>

@@ -16,7 +16,7 @@ function App() {
       <Routes>
        <Route exact path="/" element={<Login/>}/>
        <Route exact path="/resetpassword" element={<ResetPassword/>}/>
-       <Route exact path="/landingpage" element={<LandingPage/>}/>
+       <Route exact path="/landingpage/:role" element={<LandingPage/>}/>
     </Routes>
     </>
   );
