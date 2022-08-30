@@ -1,0 +1,134 @@
+.empdet{
+    padding-top: 2%;
+     font-weight: bold;
+      text-align: center;
+     color: black;
+     font-size:35px;
+     padding-bottom: 4%;
+     font-family: sikta small;
+ 
+ }
+ .form{
+    width: 75%;
+ }
+ 
+
+ .details{
+    width: 90%;
+    
+        background-color: white;
+        border: 4px solid gray;
+        height: auto;
+        border-radius: 31px;
+        margin: 0 3rem;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 3%;
+        padding-bottom: 3%;
+
+       
+         
+ }
+ 
+
+ 
+
+
+ .Addsubmit{
+    border: none;
+    color: white;
+    padding: 0.8% 2%;
+    border-radius: 25px;
+    background-color: rgb(43, 107, 245);
+    font-weight: 600;
+ }
+.tableadddetail>tr>:nth-child(2) {
+    padding-right: 10rem;
+  }
+  .tableadddetail>tr>td {
+    padding-left: 2rem;
+  }
+  .addbutton{
+    text-align: center;
+
+  }
+  .tableadddetail>tr>td>input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 3%;
+  }
+  #myFile{
+    border-bottom: none;
+  }
+
+  .tableadddetail>tr>td>input:focus-visible {
+    outline: none;
+    border-bottom: 1px solid black;
+  }
+.Appadmin{
+    padding-left: 4%;
+}
+
+ .tableadddetail>tr{
+    text-align: left;
+ }
+
+.lableemployee{
+    font-weight: bold !important;
+    font-size: 20px;
+ }
+
+ .tableadddetail>tr>td{
+    padding-bottom: 3% !important;
+
+ }
+ .addbutton> .Addsubmit:focus-visible,  .addbutton> .Addsubmit:focus{
+    outline: none;
+
+ }
+
+ .addbutton> .Addsubmit:hover{
+    background-color: rgb(13, 86, 241);
+ }
+ @media screen and (max-width:1300px) {
+    
+
+    .tableadddetail>tr>:nth-child(2) {
+        padding-right: 2rem;
+      }
+      .tableadddetail>tr>td {
+        padding-left: 0rem;
+      }
+      .Appadmin{
+        padding-left: 1%;
+    }
+    .tableadddetail>tr>td>input{
+        padding: 1%;
+    }
+    
+ }
+
+ @media screen and (max-width:500px) {
+
+    .tableadddetail>tr>td>input, .tableadddetail>tr>td>select {
+        margin-bottom: 10px;
+      }
+    .tableadddetail>tr>td{
+        display: grid;
+    }
+    .Appadmin{
+        padding-left: 0%;
+    }
+    .details{
+        margin: 0%;
+        width:100%;
+    }
+    .formadd{
+        width: 85%;
+    }
+    .tableadddetail{
+        width: 100%;
+    }
+ }

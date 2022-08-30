@@ -9,7 +9,7 @@ import { useLocalState } from './util/useLocalStorage';
 
 function Login() {
   const initialValues = { username: "", email: "", password: "" };
-  const [jwt,setJwt] = useLocalState("","jwt");
+  // const [jwt,setJwt] = useLocalState("");
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors,setFormErrors]= useState({});
   const [isSubmit,setIsSubmit]=useState(false);
@@ -19,8 +19,11 @@ function Login() {
   useEffect(()=>{
     // console.log(formErrors)
     // console.log(formValues);
+    const jwt=localStorage.getItem('jwt');
     if (Object.keys(formErrors).length ===0 && isSubmit) {
-      {
+      console.log("after api")
+      
+      
         axios.post(`api/auth/login`, {
           // firstName: 'Fred',
           // lastName: 'Flintstone'
@@ -29,28 +32,35 @@ function Login() {
         })
         .then(function (response) {
             
-          const role=response.data.authorities[0].authority
+          const role=response.data.authorities[0].authority;
+          const token=(response.headers.authorization);
+          
+          // console.log(token);
+          // setJwt(token);
+          localStorage.setItem('jwt', token)
+        
           if(role=='ADMIN'){
             navigate('/landingpage/admin');
           }
           else{
             navigate('/landingpage/user');
           }
-          console.log(isAuthenticated);
+          // console.log(isAuthenticated);
+          // console.log(jwt);
         })
         .catch(function (error) {
           const errors={}
-          console.log(error.response.status);
+          console.log(error);
           errors.invalidCred="Unauthorized Acess";
           setFormErrors(errors);
           formValues.username='';
           formValues.password='';
           
         });
-      }
-      
-     
-    }
+    
+    
+  }
+    
   },[formErrors])
 
 

@@ -1,0 +1,169 @@
+.empdet{
+    padding-top: 2%;
+     font-weight: bold;
+      text-align: center;
+     color: black;
+     font-size:35px;
+     padding-bottom: 0%;
+     font-family: sikta small;
+ 
+ }
+ .formedit{
+    width: 75%;
+ }
+ 
+
+ .detailsedit{
+    width: 90%;
+    
+        background-color: white;
+        border: 4px solid gray;
+        height: auto;
+        border-radius: 31px;
+        margin: 0 3rem;
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 3%;
+        padding-bottom: 3%;
+
+       
+         
+ }
+ 
+
+ 
+
+
+ .Editsubmit{
+    border: none;
+    color: white;
+    padding: 0.8% 2%;
+    border-radius: 25px;
+    background-color: rgb(43, 107, 245);
+    font-weight: 600;
+ }
+.tableeditdetail>tr>:nth-child(2) {
+    padding-right: 3rem;
+  }
+  .tableeditdetail>tr>td {
+    padding-left: 1rem;
+    
+    font-family: Arial;
+  }
+  .editbutton{
+    text-align: center;
+    padding-top: 4%;
+
+  }
+  .tableeditdetail>tr>td>input {
+    background-color: transparent;
+    border: none;
+    /* border-bottom: 1px solid gray; */
+    padding: 3%;
+  }
+  #myFile{
+    border-bottom: none;
+  }
+  .Edit{
+    text-align: end;
+    padding-right: 10%;
+    border-radius: 40px;
+    padding-bottom: 5%;
+    border: none;
+    
+  }
+  .Editbtn{
+    
+    border-radius: 25px;
+    padding:0.8%;
+    background-color: #23525e;
+    color: white;
+    border: none;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    float: right;
+    width: 14%;
+    font-size: 19px;
+    padding-left: 33px;
+    padding-right: 0px;
+  }
+
+  .tableeditdetail>tr>td>input:focus-visible {
+    outline: none;
+    border-bottom: 1px solid black;
+  }
+.Appadminedit{
+    padding-left: 4%;
+}
+
+ .tableeditdetail>tr{
+    text-align: left;
+ }
+
+.lableemployee{
+    font-weight: bold !important;
+    font-size: 20px;
+ }
+
+ .tableeditdetail>tr>td{
+    padding-bottom: 3% !important;
+
+ }
+ .editbutton> .Editsubmit:focus-visible,  .editbutton> .Editsubmit:focus{
+    outline: none;
+
+ }
+
+ .editimg{
+  filter: brightness(0) invert(1);
+}
+ .editbutton> .Editsubmit:hover{
+    background-color: rgb(13, 86, 241);
+ }
+ @media screen and (max-width:1300px) {
+    
+
+    .tableeditdetail>tr>:nth-child(2) {
+        padding-right: 1rem;
+      }
+      .tableeditdetail>tr>td {
+        padding-left: 0rem;
+      }
+      .Appadminedit{
+        padding-left: 1%;
+    }
+    .tableeditdetail>tr>td>input{
+        padding: 1%;
+    }
+    
+ }
+
+ @media screen and (max-width:500px) {
+
+    .tableeditdetail>tr>td>input, .tableeditdetail>tr>td>select {
+        margin-bottom: 10px;
+      }
+    .tableeditdetail>tr>td{
+        display: grid;
+    }
+    .Appadminedit{
+        padding-left: 0%;
+    }
+    .detailsedit{
+        margin: 0%;
+        width:100%;
+    }
+    .formedit{
+        width: 85%;
+    }
+    .tableeditdetail{
+        width: 100%;
+    }
+    .Editbtn{
+        width:30%;
+        padding:5px;
+        margin-bottom: 4px;
+    }
+ }

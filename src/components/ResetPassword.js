@@ -10,7 +10,7 @@ function ResetPassword() {
   const [isSubmit,setIsSubmit]=useState(false);
 
   useEffect(()=>{
-    console.log(formErrors)
+    // console.log(formErrors)
     if (Object.keys(formErrors).length ===0 && isSubmit) {
       // console.log(formErrors)
      

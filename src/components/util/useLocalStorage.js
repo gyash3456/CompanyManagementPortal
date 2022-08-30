@@ -1,14 +1,16 @@
-import {useState,useEffect} from "react";
+// import {useState,useEffect} from "react";
 
-function useLocalState(defaultValue,key){
-    const [value,setValue]=useState(()=>{
-        const localStorageValue=localStorage.getItem(key);
-        return localStorageValue!=null ?JSON.parse(localStorageValue) :defaultValue;
-    });
+// function useLocalState(defaultValue){
+//     const [value,setValue]=useState(()=>{
+//         const localStorageValue=localStorage.getItem("jwt");
+//         console.log(defaultValue);
+//         return localStorageValue!==null ?JSON.parse(localStorageValue) :defaultValue;
+//     });
 
-    useEffect(()=>{
-        localStorage.setItem(key,JSON.stringify(value));
-    })
-    return [value,setValue]
-}
-export {useLocalState};
+//     useEffect(()=>{
+//         console.log("you are in useeffect"+value);
+//         localStorage.setItem("jwt",JSON.stringify(value));
+//     },[value])
+//     return [value,setValue]
+// }
+// export {useLocalState};
