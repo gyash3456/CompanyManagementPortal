@@ -146,7 +146,7 @@ function Login() {
             {/* <Link to='/landingpage' className="btn btn-primary">Login</Link> */}
             <button className="btn btn-primary">Login</button>
             </div>
-            <p>{formErrors.invalidCred}</p>
+            <p class="login-error">{formErrors.invalidCred}</p>
 
 
         </div>

@@ -23,7 +23,7 @@ function App() {
        <Route exact path="/landingpage/:role" element={<PrivateRoute><LandingPage/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/employeedetails" element={<PrivateRoute><EmployeeDetail/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/addemployee" element={<PrivateRoute><EmployeeAdd/></PrivateRoute>}/>
-       <Route exact path="/landingpage/admin/:id" element={<EditEmployee/>}/>
+       <Route exact path="/landingpage/admin/:id" element={<PrivateRoute><EditEmployee/></PrivateRoute>}/>
     </Routes>
     </>
   );

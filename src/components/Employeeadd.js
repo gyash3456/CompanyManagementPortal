@@ -115,7 +115,7 @@ const EmployeeAdd=()=> {
           placeholder="EmployeeID"
           onChange={(e) => setId(e.target.value)}
         /></td>
-                <td className="lableemployee">Employee Name <sup>*</sup>:</td>
+                <td className="lableemployee"><p>Employee Name <sup>*</sup>:</p></td>
                 <td> <input
           type="text"
           value={name}
@@ -132,7 +132,7 @@ const EmployeeAdd=()=> {
           placeholder="Lastname"
           onChange={(e) => setLastname(e.target.value)}
         /></td>
-                <td className="lableemployee">Password <sup>*</sup> :</td>
+                <td className="lableemployee"><p>Password <sup>*</sup> :</p></td>
                 <td> <input
           type="password"
           value={password}
@@ -142,7 +142,7 @@ const EmployeeAdd=()=> {
         /></td>
             </tr>
             <tr>
-                <td className="lableemployee">Employee Email <sup>*</sup> :</td>
+                <td className="lableemployee"><p>Employee Email <sup>*</sup> :</p></td>
                 <td><input
           type="email"
           value={email}

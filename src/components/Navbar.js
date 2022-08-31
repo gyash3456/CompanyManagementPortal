@@ -2,11 +2,12 @@ import React from 'react';
 import './Navbar.css'
 import pic from './../assets/mlename.png';
 import pic2 from './../assets/person-circle.svg';
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
+
 
 
 function Navbar() {
-
+  const navigate= useNavigate();
   const{role}=useParams();
   let enable;
   if(role=='admin'){
@@ -14,6 +15,12 @@ function Navbar() {
   }
   else{
     enable ='none';
+  }
+  const logout=()=>{
+    localStorage.clear();
+    
+    navigate("/");
+
   }
   return (
     <div>
@@ -61,7 +68,7 @@ function Navbar() {
           <a class="dropdown-item" href="#">Name</a>
           <a class="dropdown-item" href="#">Change Password</a>
           <a class="dropdown-item" href="/landingpage/admin/employeedetails"style={{display:`${enable}`}}>Employee Details</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
         </div>
       </li>
      

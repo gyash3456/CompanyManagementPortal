@@ -108,11 +108,12 @@ function EditEmployee() {
         <p class="empdet">
           Employee Details
         </p>
-        <div className="Edit">
-          <button className="Editbtn" onClick={edit}>{disabled ? <span>Edit Details <img className="editimg" src={editpic} /></span> : <span>Cancel</span>} </button>
-        </div>
+        
       </div>
       <div className="Appadminedit-container">
+      <div className="Edit">
+          <button className="Editbtn" onClick={edit}>{disabled ? <span>Edit Details <img className="editimg" src={editpic} /></span> : <span>Cancel</span>} </button>
+        </div>
       <div className="Appadminedit">
         <div className="detailsedit">
 

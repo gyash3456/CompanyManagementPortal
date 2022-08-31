@@ -11,12 +11,12 @@
  .formedit{
     width: 100%;
  }
- .Appadminedit{
-  width:90%;
- }
+
  .Appadminedit-container{
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  margin:0px 35px;
  }
 
  .detailsedit{
@@ -28,7 +28,7 @@
         border-radius: 31px;
         position: relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         padding-top: 3%;
         padding-bottom: 3%;
 
@@ -49,7 +49,7 @@
     font-weight: 600;
  }
 .tableeditdetail>tr>:nth-child(2) {
-    padding-right: 3rem;
+    padding-right: 1rem;
   }
   .tableeditdetail>tr>td {
     padding-left: 4rem;
@@ -72,7 +72,6 @@
   }
   .Edit{
     text-align: end;
-    padding-right: 10%;
     border-radius: 40px;
     padding-bottom: 5%;
     border: none;
@@ -159,15 +158,22 @@
         margin: 0%;
         width:100%;
     }
-    .formedit{
-        width: 85%;
-    }
+  
     .tableeditdetail{
         width: 100%;
     }
     .Editbtn{
-        width:30%;
+        width:145px;
         padding:5px;
         margin-bottom: 4px;
     }
+    .Appadminedit-container{
+      margin:0px;
+    }
+    .mychoice{
+      width:200px;
+    }
+    .formedit{
+      width: 69%;
+   }
  }
