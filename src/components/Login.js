@@ -51,7 +51,7 @@ function Login() {
         .catch(function (error) {
           const errors={}
           console.log(error);
-          errors.invalidCred="Unauthorized Acess";
+          errors.invalidCred="Invalid credentials";
           setFormErrors(errors);
           formValues.username='';
           formValues.password='';

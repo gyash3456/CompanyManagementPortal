@@ -7,6 +7,8 @@ import pic1 from './../assets/edit.svg';
 import pic2 from './../assets/delete-icon.svg';
 import pic3 from './../assets/search.svg';
 import pic4 from './../assets/addusersvg.svg';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 // const data = [
 //     { s_no: "1", employee_id: "1111", name: "Anom", email: "kd@gmail.com", phone: +91223363636, designation: "Software Engineer", action: "" },
@@ -23,13 +25,16 @@ function EmployeeDetail() {
     useEffect(()=>{
             axios.get('/landingpage/admin/').then(function(response){
             setUserDetails(response.data);
-            console.log(response);
+            // console.log(response.data);
+            console.log(userDetails);
+            
                 // const data= await response.json;
         // console.log(data );
         }).catch(function(error){
             console.log(error);
-        })
-    },[message])
+        }
+        
+    )},[message]);
 
     const deleteUser=(userid)=>{
         axios.delete(`/landingpage/admin/${userid}`)
@@ -56,12 +61,14 @@ function EmployeeDetail() {
     }
 
     return (
+        <>
+        <Navbar/>
         <div className='emp-main'>
             <div className='emp-head'><p>Employee Details</p></div>
 
             <div className='emp-search-adduser'>
                 <div className='emp-search'>
-                    <span className='emp-search-icon'><img src={pic3} /></span>
+                    <span className='emp-search-icon'><img className='' src={pic3} /></span>
                     <input placeholder='search user' onChange={(e)=>{
                         setSearchTerm(e.target.value)
                     }}></input>
@@ -71,7 +78,7 @@ function EmployeeDetail() {
 
                 <div className='emp-adduser'>
 
-                    <span className='emp-search-icon'><img src={pic4} /></span>
+                    <span className='emp-search-icon'><img className='' src={pic4} /></span>
                     <button className='emp-adduserbtn'><Link to='/landingpage/admin/addemployee'>Add User</Link></button>
                 </div>
 
@@ -92,8 +99,10 @@ function EmployeeDetail() {
                         if(val==''){
                             return val;
                         }
-                        else if(val.firstName.toLowerCase().includes(searchTerm.toLowerCase())){
+                        else if( val.first_name !=null &&val.first_name.toLowerCase().includes(searchTerm.toLowerCase())){
+                            console.log(val);
                             return val;
+                            
                         }
                     })
                     .map((val, key) => {
@@ -101,13 +110,13 @@ function EmployeeDetail() {
                             <tr key={key}>
                                 <td >{key+1}</td>
                                 <td>{val.emp_id}</td>
-                                <td>{val.firstName}</td>
+                                <td>{val.first_name}</td>
                                 <td>{val.email}</td>
                                 <td>{val.mobile}</td>
                                 <td>{val.designation}</td>
-                                <td><button className="" onClick={()=>getUser(val.emp_id)}><img src={pic1} /></button>
+                                <td><button className="emp-btn" onClick={()=>getUser(val.emp_id)}><img className='emp-edit-img' src={pic1} /></button>
                                  <button className="emp-btn"onClick={()=>deleteUser(val.emp_id)}>
-                                <img src={pic2} />
+                                <img className='emp-delete-img' src={pic2} />
                                 </button> 
                                 </td>
                             </tr>
@@ -117,6 +126,8 @@ function EmployeeDetail() {
                 <div className="message">{message ? <p>{message}</p> : null}</div>
             </div>
         </div>
+        <Footer></Footer>
+        </>
     );
 }
 
