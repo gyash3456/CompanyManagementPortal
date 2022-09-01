@@ -139,7 +139,7 @@ function Login() {
           </div>
 
           <div className='forget'>
-            <Link to='/resetpassword'>Forgot Password?</Link>
+            <Link to='/forget'>Forgot Password?</Link>
             </div>
 
           <div>

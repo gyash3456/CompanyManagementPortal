@@ -90,7 +90,7 @@ function ResetPassword() {
 
           </div>
 
-          <div><button  className="btn btn-primary">Login</button></div>
+          <div><button  className="btn btn-primary">Reset</button></div>
 
 
         </div>

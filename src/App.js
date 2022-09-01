@@ -13,17 +13,20 @@ import EmployeeDetail from './components/EmployeeDetail';
 import EmployeeAdd from './components/Employeeadd';
 import PrivateRoute from './components/util/PrivateRoute';
 import EditEmployee from './components/EditEmployee';
+import Forget from './components/Forget';
 
 function App() {
   return (
     <>
+    {/* <Forget/> */}
       <Routes>
        <Route exact path="/" element={<Login/>}/>
-       <Route exact path="/resetpassword" element={<ResetPassword/>}/>
+       <Route  path="/resetpassword/:tkn" element={<ResetPassword/>}/>
        <Route exact path="/landingpage/:role" element={<PrivateRoute><LandingPage/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/employeedetails" element={<PrivateRoute><EmployeeDetail/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/addemployee" element={<PrivateRoute><EmployeeAdd/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/:id" element={<EditEmployee/>}/>
+       <Route exact path="/forget/" element={<Forget/>}/>
     </Routes>
     </>
   );

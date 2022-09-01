@@ -1,5 +1,5 @@
 import { useState,useEffect} from "react";
-import axios from 'axios'
+import axios from 'axios';
 import React from "react";
 import './EditEmployee.css';
 import editpic from './../assets/edit1.svg';
