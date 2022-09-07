@@ -1,0 +1,170 @@
+.emp-head>p {
+    font-size: 44px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    font-family: sitka small;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.ApplyStatusBtn{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin:0px 35px;
+}
+
+.Apply>button{
+    border: 1px solid black;
+}
+
+.ApplyBtn{
+    font-weight: 500;
+    border-radius: 50px;
+    width: 110px;
+    height: 45px;
+}
+
+.ApplyBtn:hover{
+    background-color: #09427D;
+    color: white;
+}
+
+.ApplyBtn:focus{
+    outline: none;
+}
+
+.ApplyBtn:focus{
+    background-color: black;
+    color: white;
+}
+
+.StatusBtn{
+    border-radius: 50px;
+    width: 110px;
+    height: 45px;
+    font-weight: 500;
+}
+
+.StatusBtn:hover{
+    background-color: #09427D;
+    color: white;
+}
+
+.StatusBtn:focus{
+    outline: none;
+}
+
+.StatusBtn:focus{
+    background-color: black;
+    color: white;
+}
+
+.reimb-table{
+    background-color: white;
+    border: 1px solid black;
+    height: auto;
+    border-radius: 30px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    overflow-x: auto;
+    border-collapse: collapse;
+    width: 96%;
+    margin-top: 45px;
+ }
+
+
+.trdata>td , .trhead>th{
+    text-align: center;
+    border: 1px solid black;
+    padding: 12px 30px 30px 0px;
+    border-collapse: collapse;
+    border-radius: 50px !important;    
+}
+
+.trhead>.sn{
+    text-align: center;
+    border: 1px solid black;
+    padding: 12px 22px 30px 15px;
+    border-collapse: collapse;
+    border-radius: 50px !important;
+    width: 0px;
+}
+
+.trhead>th{
+    font-family: Arial;
+    font-size: 18px;
+}
+
+.trdata>td{
+    font-weight: 500;
+}
+
+
+.table-reimb{
+    /* border: 1px solid black;
+    border-radius: 10px; */
+    width: 100%;
+}
+
+.refer{
+    border: 1px solid black;
+    box-shadow: 0px 4px 8px;
+    border-radius: 10px;
+    
+}
+
+
+@media screen and (max-width:1310px){
+    
+    .trdata>td, .trhead>th{
+        padding:3px;
+    }
+
+    .trhead>.sn {
+        padding: 12px 0px 10px 0px;
+    }
+
+}
+@media screen and (max-width:972px){
+    .reimb-table{
+        width: 100%;
+    }
+    .trdata>td, .trhead>th{
+        padding:3px;
+    }
+
+    .trhead>.sn {
+        padding: 12px 0px 10px 0px;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+    .emp-head>p {
+        text-align: center;
+    }
+
+    .ApplyStatusBtn {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0px 0px;
+    }
+
+    .reimb-table{
+        width: 100%;
+    }
+    .trdata>td, .trhead>th{
+        padding:1px;
+    }
+
+    .trhead>.sn {
+        padding: 12px 0px 10px 0px;
+    }
+
+  }

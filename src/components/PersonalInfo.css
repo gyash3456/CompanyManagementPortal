@@ -1,0 +1,112 @@
+.MainEmp{
+    background-color: #dcebff;
+    padding-bottom: 60px;
+   
+}
+
+.text>.para{
+   
+ 
+    padding-top: 2%;
+    font-weight: bold;
+    
+    text-align: center;
+    color: black;
+    font-size: -webkit-xxx-large;
+}
+  
+
+.PersonalBox{
+    background-color: white;
+    border: 4px solid gray;
+    height: auto;
+    border-radius: 31px;
+    margin: 0 3rem;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+   padding:6% 4% 6% 6%;
+   
+     }
+     /* .table{
+        border:none;
+     } */
+
+    
+     .perinfo{
+        border:none;
+        vertical-align: top;
+     }
+
+     .infodata , .rightside{
+        word-wrap:break-word ;
+        width:fixed;
+        height: auto;
+        font-weight:bold;
+        font-size:30px;
+        border: none !important;
+
+     }
+.rightside {
+    padding-left: 170px;
+    
+     }
+     
+
+
+
+
+
+.image{
+    justify-content:space-between;
+   
+    margin-top: 2%; 
+    display: flex;
+     
+     float: right;
+     max-height: 18rem;
+     /* padding-top:1%; */
+     
+   
+    }
+.imageemp{
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+   }
+
+   @media screen and (max-width:900px){
+    .rightside{
+        padding-left: 12px;
+        padding-top: 5px;
+    }
+    .tableinfo td{
+        display: block;
+    }
+    /* .table tr td, .table tr td{
+        width: 50%;
+      } */
+      .on-small thead{
+        display: none;}
+      
+    .imageemp{
+        width:100%;
+       padding: 0px !important;
+       
+    }
+    .PersonalBox{
+        padding: 0% 4% 0% 4%;
+        flex-wrap: wrap-reverse;
+        
+    }
+    .infodata , .rightside{
+        font-size: 20px;
+        font-weight:none;
+    }
+    
+    .image{
+        margin-top: 5%;
+        padding-bottom: 5%;
+        padding-left: 10%;
+    }
+   }

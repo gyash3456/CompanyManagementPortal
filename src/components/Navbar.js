@@ -2,11 +2,12 @@ import React from 'react';
 import './Navbar.css'
 import pic from './../assets/mlename.png';
 import pic2 from './../assets/person-circle.svg';
-import {useParams} from "react-router-dom";
+import {useParams,useNavigate} from "react-router-dom";
+
 
 
 function Navbar() {
-
+  const navigate= useNavigate();
   const{role}=useParams();
   let enable;
   if(role=='admin'){
@@ -14,6 +15,12 @@ function Navbar() {
   }
   else{
     enable ='none';
+  }
+  const logout=()=>{
+    localStorage.clear();
+    
+    navigate("/");
+
   }
   return (
     <div>
@@ -29,10 +36,10 @@ function Navbar() {
           Personal
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Personal Information</a>
+          <a class="dropdown-item" href="/landingpage/personalinfo">Personal Information</a>
           <a class="dropdown-item" href="#">Pay Slip</a>
           <a class="dropdown-item" href="#">Employee Referral Program</a>
-          <a class="dropdown-item" href="#">Reimbursement</a>
+          <a class="dropdown-item" href="/landingpage/reimbursement">Reimbursement</a>
           <a class="dropdown-item" href="#">Feedback</a>
         </div>
       </li>
@@ -45,12 +52,12 @@ function Navbar() {
         Company Info
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Ethics and policies</a>
-          <a class="dropdown-item" href="#">Social Media Campaign</a>
+          <a class="dropdown-item" href="/landingpage/ethicspolicies">Ethics and policies</a>
+          <a class="dropdown-item" href="/landingpage/socialmedia">Social Media Campaign</a>
         </div>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Hiring</a>
+        <a class="nav-link" href="/landingpage/hiring">Hiring</a>
       </li>
       
       <li class="nav-item dropdown">
@@ -61,7 +68,7 @@ function Navbar() {
           <a class="dropdown-item" href="#">Name</a>
           <a class="dropdown-item" href="#">Change Password</a>
           <a class="dropdown-item" href="/landingpage/admin/employeedetails"style={{display:`${enable}`}}>Employee Details</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
         </div>
       </li>
      

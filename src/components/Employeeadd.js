@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import './Employeeadd.css';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 const EmployeeAdd=()=> {
 
@@ -38,7 +40,7 @@ const EmployeeAdd=()=> {
 
         body: JSON.stringify({
             emp_id:id,
-            firstName: name,
+            first_name: name,
           email: email,
           gender: gender,
           mobile: phone,
@@ -65,7 +67,7 @@ const EmployeeAdd=()=> {
               setGender("");
               setPhone("");
               setAddress("");
-              setAadharno("");
+              setAadharno(0);
               setPancard("");
               setDOB("");
               setDesignation("");
@@ -92,7 +94,8 @@ const EmployeeAdd=()=> {
   };
 
   return (
-    <div>
+    <div className="emp-add">
+      <Navbar></Navbar>
     <div class="textempadd" >
             <p class="empdet">
         Employee Details
@@ -112,10 +115,11 @@ const EmployeeAdd=()=> {
           placeholder="EmployeeID"
           onChange={(e) => setId(e.target.value)}
         /></td>
-                <td className="lableemployee">Employee Name :</td>
+                <td className="lableemployee"><p>Employee Name <sup>*</sup>:</p></td>
                 <td> <input
           type="text"
           value={name}
+          required
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
         /></td>
@@ -128,7 +132,7 @@ const EmployeeAdd=()=> {
           placeholder="Lastname"
           onChange={(e) => setLastname(e.target.value)}
         /></td>
-                <td className="lableemployee">Password :</td>
+                <td className="lableemployee"><p>Password <sup>*</sup> :</p></td>
                 <td> <input
           type="password"
           value={password}
@@ -138,10 +142,11 @@ const EmployeeAdd=()=> {
         /></td>
             </tr>
             <tr>
-                <td className="lableemployee">Employee Email :</td>
+                <td className="lableemployee"><p>Employee Email <sup>*</sup> :</p></td>
                 <td><input
           type="email"
           value={email}
+          required
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         /></td>
@@ -259,6 +264,7 @@ const EmployeeAdd=()=> {
       </form>
       </div>
     </div>
+    <Footer></Footer>
     </div>
     
   );

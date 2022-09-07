@@ -11,7 +11,9 @@
  .form{
     width: 75%;
  }
- 
+ .editimg{
+  width:20px;
+ }
 
  .details{
     width: 90%;
@@ -31,8 +33,20 @@
          
  }
  
+.emp-add sup{
+  color:red;
+}
+ .message{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  
+ }
+ .message p{
+  color:green;
+  font-weight: 600;
 
- 
+ }
 
 
  .Addsubmit{

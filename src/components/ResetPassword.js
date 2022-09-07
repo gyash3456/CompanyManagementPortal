@@ -1,16 +1,26 @@
 import React, { useEffect } from 'react'
 import './login.css'
+import axios from 'axios';
 import pic from './../assets/mlelogo.png'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 
 function ResetPassword() {
   const initialValues = { password: "", confirmPassword: ""};
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors,setFormErrors]= useState({});
   const [isSubmit,setIsSubmit]=useState(false);
+  const [token, setToken]=useState('');
+  const [password, setPassword]=useState('');
+  const [confirmPassword, setConfirmPassword]=useState('');
+  // const [msg,setMsg]=useState('');
+  const error = '';
+  const navigate= useNavigate();
 
   useEffect(()=>{
-    // console.log(formErrors)
+    const url=window.location.href.split("/");;
+    setToken(url[url.length - 1])
+    
     if (Object.keys(formErrors).length ===0 && isSubmit) {
       // console.log(formErrors)
      
@@ -18,51 +28,64 @@ function ResetPassword() {
   },[formErrors])
 
 
-  const handleChange=(e)=>{
-    const {name,value}=e.target;
-    setFormValues({...formValues,[name]:value});
+  // const handleChange=()=>{
+    //console.log(password);
     // setFormValues({...formValues,name:value});
     // console.log(formValues);
     // console.log(e.target);
     
-  }
+  // }
 
-  const handleSubmit=(e)=>{
+  const handleSubmit= async()=>{
+    // console.log(typeof(token));
+    // console.log(password);
+
+    axios.post(`/api/auth/reset-password?token=${token}&password=${password}`).then((response)=>{
+
+      alert(response.data)
     console.log("in handleSubmit")
-    e.preventDefault();
-    setFormErrors(validate(formValues));
+
     // console.log(formErrors);
     setIsSubmit(true); 
+    navigate('/');
+
+    }).catch((err)=>{
+        console.log(err)
+    })
+    
+
   }
   
 
-  const validate=(values)=>{
-    const errors={};
+  const validate=(e)=>{
+    e.preventDefault();
     const regexpassword=/[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-    
-    if(!values.password){
-      errors.password="Password is required";
+    if(!password){
+      error= "Password is required";
     }
 
-    else if(!(regexpassword.test(values.password))){
-      errors.password="Password should contain special characters";
+    else if(!(regexpassword.test(password))){
+      error= "Password should contain special characters";
      }
-    else if(values.password.length<4){
-     errors.password="Password is too short";
+    else if(password.length<4){
+     error= "Password is too short";
     }
-    else if(values.password.length>10){
-      errors.password="Password cannot exceed more than 10 characters";
+    else if(password.length>10){
+      error= "Password cannot exceed more than 10 characters";
      }
     
-     if (values.password != values.confirmPassword) {
-      errors.confirmPassword="Password is not matched";
+    else if (password != confirmPassword) {
+      error= "Password is not matched";
      }
-     
+    console.log(error)
+    if(!error){
+      handleSubmit();
+    }
+    setFormErrors(error);
 
-    return errors;
   }
   return (
-    <form onSubmit={handleSubmit} >
+    <form onSubmit={validate} >
       
       <div className='dialoguebox-wrapper'>
 
@@ -79,18 +102,19 @@ function ResetPassword() {
 
 
             <i className=" align-middle fa fa-user icon fa-lg mt-7"></i>
-            <input className="input-field" placeholder='Enter new password' type="password" name="password"value={formValues.password} onChange={handleChange}></input>
-            <p>{formErrors.password}</p>
+            <input className="input-field" placeholder='Enter new password' type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
 
             <br />
 
             <i className="fa fa-lock icon fa-lg"></i>
-            <input className='input-field' type="password"placeholder='Confirm new password'name="confirmPassword"value={formValues.confirmpassword} onChange={handleChange}></input>
-            <p>{formErrors.confirmPassword}</p>
+            <input className='input-field' type="password"placeholder='Confirm new password' name="confirmPassword" value={confirmPassword} onChange={(e)=> setConfirmPassword(e.target.value)} />
+            <p>{error}</p>
 
           </div>
 
-          <div><button  className="btn btn-primary">Reset</button></div>
+          {/* <div><a  className="btn btn-primary"  href='/' onClick={handleSubmit}>Reset</a></div> */}
+          <div><button className="btn btn-primary" onClick={handleSubmit}>Reset</button></div>
+          {/* <div>{msg}</div> */}
 
 
         </div>

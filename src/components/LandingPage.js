@@ -14,7 +14,6 @@ function LandingPage() {
     <Carousel/>
     <WelcomeSection/>
     <Greetings/>
-    <ResetPassword/>
     <Footer/>
     </>
   );

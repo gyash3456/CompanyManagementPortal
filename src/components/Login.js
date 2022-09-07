@@ -51,7 +51,7 @@ function Login() {
         .catch(function (error) {
           const errors={}
           console.log(error);
-          errors.invalidCred="Unauthorized Acess";
+          errors.invalidCred="Invalid credentials";
           setFormErrors(errors);
           formValues.username='';
           formValues.password='';
@@ -146,7 +146,7 @@ function Login() {
             {/* <Link to='/landingpage' className="btn btn-primary">Login</Link> */}
             <button className="btn btn-primary">Login</button>
             </div>
-            <p>{formErrors.invalidCred}</p>
+            <p class="login-error">{formErrors.invalidCred}</p>
 
 
         </div>

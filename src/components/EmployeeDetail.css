@@ -24,13 +24,14 @@
 
 .main-table>.table-header>th {
     border-bottom: 1px solid black;
-
-}
-
-.main-table>.table-header>th,.main-table>.table-header>td{
     text-align: center;
 }
 
+
+.main-table>tr{
+    text-align: center;
+   
+}
 .table-header {
     background-color: #23525e;
     font-family: 'Segoe UI';
@@ -53,9 +54,9 @@
     font-weight: bold;
 }
 
-img {
+/* img {
     width: 36px;
-}
+} */
 
 .emp-btn{
     border: none;
@@ -73,6 +74,15 @@ img {
     display: flex;
     justify-content: flex-end;
     padding-right: 75px;
+}
+.emp-edit-img{
+    width: 20px;
+}
+.emp-delete-img{
+    width: 20px;   
+}
+.emp-search-icon>img{
+    width: 30px;
 }
 
 

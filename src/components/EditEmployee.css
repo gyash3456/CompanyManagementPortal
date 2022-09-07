@@ -9,21 +9,26 @@
  
  }
  .formedit{
-    width: 75%;
+    width: 100%;
  }
- 
+
+ .Appadminedit-container{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin:0px 35px;
+ }
 
  .detailsedit{
-    width: 90%;
+    width: 100%;
     
         background-color: white;
         border: 4px solid gray;
         height: auto;
         border-radius: 31px;
-        margin: 0 3rem;
         position: relative;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         padding-top: 3%;
         padding-bottom: 3%;
 
@@ -44,10 +49,10 @@
     font-weight: 600;
  }
 .tableeditdetail>tr>:nth-child(2) {
-    padding-right: 3rem;
+    padding-right: 1rem;
   }
   .tableeditdetail>tr>td {
-    padding-left: 1rem;
+    padding-left: 4rem;
     
     font-family: Arial;
   }
@@ -67,7 +72,6 @@
   }
   .Edit{
     text-align: end;
-    padding-right: 10%;
     border-radius: 40px;
     padding-bottom: 5%;
     border: none;
@@ -82,11 +86,11 @@
     border: none;
     justify-content: center;
     align-items: center;
-    display: flex;
+    display: flex !important;
     float: right;
     width: 14%;
     font-size: 19px;
-    padding-left: 33px;
+    padding-left: 8px;
     padding-right: 0px;
   }
 
@@ -94,9 +98,7 @@
     outline: none;
     border-bottom: 1px solid black;
   }
-.Appadminedit{
-    padding-left: 4%;
-}
+
 
  .tableeditdetail>tr{
     text-align: left;
@@ -118,6 +120,7 @@
 
  .editimg{
   filter: brightness(0) invert(1);
+  margin-bottom:7px;
 }
  .editbutton> .Editsubmit:hover{
     background-color: rgb(13, 86, 241);
@@ -155,15 +158,22 @@
         margin: 0%;
         width:100%;
     }
-    .formedit{
-        width: 85%;
-    }
+  
     .tableeditdetail{
         width: 100%;
     }
     .Editbtn{
-        width:30%;
+        width:145px;
         padding:5px;
         margin-bottom: 4px;
     }
+    .Appadminedit-container{
+      margin:0px;
+    }
+    .mychoice{
+      width:200px;
+    }
+    .formedit{
+      width: 69%;
+   }
  }

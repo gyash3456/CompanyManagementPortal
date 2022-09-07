@@ -8,15 +8,15 @@ function WelcomeSection() {
     <div class="WelcomeSection">
       <div class="Welcomeclass">
       <div class="WelcomeNote">
-        <p class="head1">
+        <p class="headname">
           Hi,Vikas
         </p>
-        <p class="text1">
+        <p class="textmsg">
           This is your Employee management dashboard . Look around and act.
         </p>
       </div>
-        <div class="Image">
-          <img src={ pic}></img>
+        <div class="welcomeImage">
+          <img  className='welcomeimg' src={ pic}></img>
 
         </div>
         </div>

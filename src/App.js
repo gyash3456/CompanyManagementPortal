@@ -14,6 +14,11 @@ import EmployeeAdd from './components/Employeeadd';
 import PrivateRoute from './components/util/PrivateRoute';
 import EditEmployee from './components/EditEmployee';
 import Forget from './components/Forget';
+import Hiring from './components/Hiring';
+import EmployeeReimbursement from './components/EmployeeReimbursement';
+import PersonalInfo from './components/PersonalInfo';
+import Ethics_Policies from '../src/components/Ethics_Policies';
+import SocialMedia from './components/SocialMedia';
 
 function App() {
   return (
@@ -25,8 +30,18 @@ function App() {
        <Route exact path="/landingpage/:role" element={<PrivateRoute><LandingPage/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/employeedetails" element={<PrivateRoute><EmployeeDetail/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/addemployee" element={<PrivateRoute><EmployeeAdd/></PrivateRoute>}/>
-       <Route exact path="/landingpage/admin/:id" element={<EditEmployee/>}/>
+       <Route exact path="/landingpage/hiring" element={<PrivateRoute><Hiring/></PrivateRoute>}/>
+       <Route exact path="/landingpage/reimbursement" element={<PrivateRoute><EmployeeReimbursement/></PrivateRoute>}/>
+       <Route exact path="/landingpage/personalinfo" element={<PrivateRoute><PersonalInfo/></PrivateRoute>}/>
+       <Route exact path="/landingpage/socialmedia" element={<PrivateRoute><SocialMedia/></PrivateRoute>}/>
+
+
+
+       <Route exact path="/landingpage/ethicspolicies" element={<PrivateRoute><Ethics_Policies/></PrivateRoute>}/>
        <Route exact path="/forget/" element={<Forget/>}/>
+
+       <Route exact path="/landingpage/admin/:id" element={<PrivateRoute><EditEmployee/></PrivateRoute>}/>
+
     </Routes>
     </>
   );
