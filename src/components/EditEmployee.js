@@ -8,6 +8,8 @@ import editpic from './../assets/edit1.svg';
 import { useParams } from "react-router-dom";
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import pic from './../assets/MicrosoftTeams-image.png'
 
 
@@ -17,6 +19,7 @@ function EditEmployee() {
   const initialObject = { id:"", first_name: "", email: "", gender: "", mobile: "", address: "", aadhar:"", pan_no: "", date_of_birth: "", designation: "", joining_date: "", bank_name: "", blood_group: "", account_no: "", ifsc_code: "", password: "" };
   const [resObject, setResObject] = useState(initialObject);
   const [disabled, setDisabled] = useState(true);
+  const [enableBorder,setEnableBorder]= useState();
   const [message, setMessage] = useState("");
 
   const { id } = useParams();
@@ -50,7 +53,7 @@ function EditEmployee() {
       })
 
 
-  }, [])
+  }, [enableBorder])
 
   const handleFormChange = (e) => {
     e.preventDefault();
@@ -90,8 +93,12 @@ function EditEmployee() {
       }),
     }).then((resp) => {
       console.log(resp);
+      edit();
+
+      toast.success("Employee Details Updated Successfully",{autoClose:2000,position:"top-center"})
     }).catch((err) => {
       console.log(err);
+      toast.error("Employee Details Updated Successfully",{autoClose:2000,position:"top-center"})
 
     }
 
@@ -101,6 +108,13 @@ function EditEmployee() {
 
   const edit = (event) => {
     setDisabled(!disabled);
+    if(disabled){
+      
+      setEnableBorder("1px solid black");
+    }else{
+      setEnableBorder("none");
+    }
+    
   }
 
   return (
@@ -140,6 +154,7 @@ function EditEmployee() {
                   placeholder="Name"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
               <tr>
@@ -151,6 +166,7 @@ function EditEmployee() {
                   placeholder="Email"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Employee Gender :</td>
                 <td><select class="mychoice" id="SelectUserChoice" name= "gender"onChange={handleFormChange}>
@@ -171,6 +187,7 @@ function EditEmployee() {
                   placeholder="mobile"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
 
                 /></td>
                 <td className="lableemployee">Employee Address :</td>
@@ -181,6 +198,7 @@ function EditEmployee() {
                   placeholder="Address"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
               <tr>
@@ -192,6 +210,7 @@ function EditEmployee() {
                   placeholder="Adhar no"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Pan Card No :</td>
                 <td> <input
@@ -201,6 +220,7 @@ function EditEmployee() {
                   placeholder="pan_no No"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
               <tr>
@@ -212,6 +232,7 @@ function EditEmployee() {
                   placeholder="date_of_birth"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Designation :</td>
                 <td><input
@@ -221,6 +242,7 @@ function EditEmployee() {
                   placeholder="Designation"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
               <tr>
@@ -232,6 +254,7 @@ function EditEmployee() {
                   placeholder="Joining Date"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Bank Name :</td>
                 <td><input
@@ -241,6 +264,7 @@ function EditEmployee() {
                   placeholder="Bank No"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
               <tr>
@@ -273,6 +297,7 @@ function EditEmployee() {
                   placeholder="Account No."
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">ifsc_code Code :</td>
                 <td> <input
@@ -282,6 +307,7 @@ function EditEmployee() {
                   placeholder="ifsc_code"
                   onChange={handleFormChange}
                   disabled={disabled}
+                  style={{borderBottom:enableBorder}}
                 /></td>
               </tr>
             </table>
@@ -291,6 +317,7 @@ function EditEmployee() {
         </div>
         </div>
       </div>
+      <ToastContainer/>
       <Footer/>
     </div>
 

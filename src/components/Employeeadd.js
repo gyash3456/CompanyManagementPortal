@@ -4,6 +4,8 @@ import React from "react";
 import './Employeeadd.css';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const EmployeeAdd=()=> {
 
@@ -60,6 +62,7 @@ const EmployeeAdd=()=> {
           
         }),
       }).then(function(response){
+        console.log(response.data);
             if(response.status==201){
               setId("");
               setName("");
@@ -78,7 +81,8 @@ const EmployeeAdd=()=> {
               setIFSC("");
               setPassword("");
               setLastname("");
-              setMessage("User successfully created");
+              // setMessage("User successfully created");
+              toast("User successfully created",{autoClose:2000,position:"top-center"})
 
             }
            else if(response.status==404){
@@ -94,6 +98,7 @@ const EmployeeAdd=()=> {
   };
 
   return (
+    <>
     <div className="emp-add">
       <Navbar></Navbar>
     <div class="textempadd" >
@@ -266,7 +271,8 @@ const EmployeeAdd=()=> {
     </div>
     <Footer></Footer>
     </div>
-    
+    <ToastContainer/>
+    </>
   );
 }
 

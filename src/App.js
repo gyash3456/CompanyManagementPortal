@@ -20,6 +20,7 @@ import PersonalInfo from './components/PersonalInfo';
 import Ethics_Policies from '../src/components/Ethics_Policies';
 import SocialMedia from './components/SocialMedia';
 
+
 function App() {
   return (
     <>
@@ -41,6 +42,11 @@ function App() {
        <Route exact path="/forget/" element={<Forget/>}/>
 
        <Route exact path="/landingpage/admin/:id" element={<PrivateRoute><EditEmployee/></PrivateRoute>}/>
+
+
+
+       
+
 
     </Routes>
     </>
