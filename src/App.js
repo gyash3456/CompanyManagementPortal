@@ -19,19 +19,21 @@ import EmployeeReimbursement from './components/EmployeeReimbursement';
 import PersonalInfo from './components/PersonalInfo';
 import Ethics_Policies from '../src/components/Ethics_Policies';
 import SocialMedia from './components/SocialMedia';
+import ChangePassword from './components/ChangePassword';
 
 
 function App() {
   return (
     <>
-    {/* <Forget/> */}
-      <Routes>
+     
+        <Routes>
        <Route exact path="/" element={<Login/>}/>
        <Route  path="/resetpassword/:tkn" element={<ResetPassword/>}/>
        <Route exact path="/landingpage/:role" element={<PrivateRoute><LandingPage/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/employeedetails" element={<PrivateRoute><EmployeeDetail/></PrivateRoute>}/>
        <Route exact path="/landingpage/admin/addemployee" element={<PrivateRoute><EmployeeAdd/></PrivateRoute>}/>
        <Route exact path="/landingpage/hiring" element={<PrivateRoute><Hiring/></PrivateRoute>}/>
+       <Route exact path="/landingpage/changepassword" element={<PrivateRoute><ChangePassword/></PrivateRoute>}/>
        <Route exact path="/landingpage/reimbursement" element={<PrivateRoute><EmployeeReimbursement/></PrivateRoute>}/>
        <Route exact path="/landingpage/personalinfo" element={<PrivateRoute><PersonalInfo/></PrivateRoute>}/>
        <Route exact path="/landingpage/socialmedia" element={<PrivateRoute><SocialMedia/></PrivateRoute>}/>
@@ -48,7 +50,9 @@ function App() {
        
 
 
-    </Routes>
+    </Routes> 
+    {/* <EditEmployee />
+    <EmployeeAdd/> */}
     </>
   );
 }

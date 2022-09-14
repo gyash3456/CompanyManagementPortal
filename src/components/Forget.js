@@ -61,7 +61,7 @@ function Forget() {
           <div className="input-icons">
 
 
-            <i className=" align-middle fa fa-user icon fa-lg mt-7"></i>
+            <i class="align-middle fa fa-envelope icon fa-lg mt-7" aria-hidden="true"></i>
             <input className="input-field" placeholder='Enter Email' type="email" name="email"value={formValues.email} onChange={(e)=> setFormValues(e.target.value)}></input>
             <p>{formErrors.email}</p>
 

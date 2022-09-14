@@ -22,12 +22,13 @@
         border: 4px solid gray;
         height: auto;
         border-radius: 31px;
-        margin: 0 3rem;
+        margin: 0 3rem 55px;
         position: relative;
         display: flex;
         justify-content: space-around;
         padding-top: 3%;
         padding-bottom: 3%;
+        
 
        
          

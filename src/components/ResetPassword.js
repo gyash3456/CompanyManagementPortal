@@ -101,7 +101,7 @@ function ResetPassword() {
           <div className="input-icons">
 
 
-            <i className=" align-middle fa fa-user icon fa-lg mt-7"></i>
+          <i className="fa fa-lock icon fa-lg"></i>
             <input className="input-field" placeholder='Enter new password' type="password" name="password" value={password} onChange={(e)=> setPassword(e.target.value)} />
 
             <br />

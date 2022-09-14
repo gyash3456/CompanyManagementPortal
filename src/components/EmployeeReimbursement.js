@@ -37,35 +37,35 @@ export default function EmployeeReimbursement() {
                     <td>XXXXXX </td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
-                    <td>Approved/Panding</td>
+                    <td>Approved/Pending</td>
                 </tr>
                 <tr className='trdata'>
                      <td>2</td>
                      <td>XXXXXX</td>
                      <td>XXXXXX</td>
                      <td>XXXXXX</td>
-                    <td>Approved/Panding</td>
+                    <td>Approved/Pending</td>
                 </tr>
                 <tr className='trdata'>
                     <td>3</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
-                    <td>Approved/Panding</td>
+                    <td>Approved/Pending</td>
                 </tr>
                 <tr className='trdata'>
                     <td>4</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
-                    <td>Approved/Panding</td>
+                    <td>Approved/Pending</td>
                 </tr>
                 <tr className='trdata'>
                     <td>5</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
                     <td>XXXXXX</td>
-                    <td>Approved/Panding</td>
+                    <td>Approved/Pending</td>
                 </tr>
                 
                </table>

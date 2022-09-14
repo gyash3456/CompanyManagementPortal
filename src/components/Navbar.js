@@ -66,7 +66,7 @@ function Navbar() {
         </a>
         <div class="dropdown-menu user-logo" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="#">Name</a>
-          <a class="dropdown-item" href="#">Change Password</a>
+          <a class="dropdown-item" href="/landingpage/changepassword">Change Password</a>
           <a class="dropdown-item" href="/landingpage/admin/employeedetails"style={{display:`${enable}`}}>Employee Details</a>
           <a class="dropdown-item" href="#" onClick={logout}>Logout</a>
         </div>

@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from "react-router-dom";
 
 const EmployeeAdd=()=> {
 
@@ -27,6 +28,7 @@ const EmployeeAdd=()=> {
   const [accountno, setAccountno] = useState("");
   const [ifsc, setIFSC] = useState("");
   const [message , setMessage] = useState("");
+  const navigate=useNavigate();
 
   useEffect(()=>{},[message]);
 
@@ -82,8 +84,8 @@ const EmployeeAdd=()=> {
               setPassword("");
               setLastname("");
               // setMessage("User successfully created");
-              toast("User successfully created",{autoClose:2000,position:"top-center"})
-
+              toast.success("User successfully created",{autoClose:2000,position:"top-center"})
+              setTimeout(()=>{navigate("/landingpage/admin/employeedetails")},3000)
             }
            else if(response.status==404){
               setMessage("Make sure email is unique");
@@ -156,11 +158,11 @@ const EmployeeAdd=()=> {
           onChange={(e) => setEmail(e.target.value)}
         /></td>
                 <td className="lableemployee">Employee Gender :</td>
-                <td><select class="mychoice" id="SelectUserChoice">
-      <option value="dontUseMe">-Select a value-</option>
-      <option value="myoption1">Male</option>
-      <option value="myoption2">Female</option>
-      <option value="myoption3">Others</option>
+                <td><select class="mychoice" id="SelectUserChoice"value={gender}>
+      <option value={gender}>-Select a value-</option>
+      <option value={gender}>Male</option>
+      <option value={gender}>Female</option>
+      <option value={gender}>Others</option>
       onChange={(e) => setGender(e.target.value)}
     </select></td>
             </tr>
@@ -232,14 +234,14 @@ const EmployeeAdd=()=> {
                 <td className="lableemployee">Blood Group :</td>
                 <td><select class="mychoice" id="SelectUserChoice">
       <option value="dontUseMe">-Select a value-</option>
-      <option value="myoption1">A+</option>
-      <option value="myoption2">A-</option>
-      <option value="myoption3">AB+</option>
-      <option value="myoption1">AB-</option>
-      <option value="myoption2">B+</option>
-      <option value="myoption3">B-</option>
-      <option value="myoption1">O+</option>
-      <option value="myoption2">O-</option>
+      <option value={bloodgroup}>A+</option>
+      <option value={bloodgroup}>A-</option>
+      <option value={bloodgroup}>AB+</option>
+      <option value={bloodgroup}>AB-</option>
+      <option value={bloodgroup}>B+</option>
+      <option value={bloodgroup}>B-</option>
+      <option value={bloodgroup}>O+</option>
+      <option value={bloodgroup}>O-</option>
       
       onChange={(e) => setBloodgrup(e.target.value)}
     </select></td>

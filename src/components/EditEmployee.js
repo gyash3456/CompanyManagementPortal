@@ -169,7 +169,7 @@ function EditEmployee() {
                   style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Employee Gender :</td>
-                <td><select class="mychoice" id="SelectUserChoice" name= "gender"onChange={handleFormChange}>
+                <td><select class="mychoice" id="SelectUserChoice" name= "gender"onChange={handleFormChange}disabled={disabled}>
                   <option disabled={disabled} value="dontUseMe">-Select a value-</option>
                   <option disabled={disabled} value="male">Male</option>
                   <option disabled={disabled} value="female">Female</option>
@@ -269,7 +269,7 @@ function EditEmployee() {
               </tr>
               <tr>
                 <td className="lableemployee">Blood Group :</td>
-                <td><select class="mychoice" id="SelectUserChoice" name="blood_group" onChange={handleFormChange}>
+                <td><select class="mychoice" id="SelectUserChoice" name="blood_group" onChange={handleFormChange} disabled={disabled}>
                   <option disabled={disabled} value="dontUseMe">-Select a value-</option>
                   <option disabled={disabled} value="1">A+</option>
                   <option disabled={disabled} value="2">A-</option>
