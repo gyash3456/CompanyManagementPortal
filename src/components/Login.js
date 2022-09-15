@@ -6,6 +6,8 @@ import {Link,useNavigate } from 'react-router-dom';
 import base_url from '../api/bootapi';
 import axios from 'axios';
 import { useLocalState } from './util/useLocalStorage';
+import {useDispatch,useSelector} from 'react-redux';
+import{loggedInEmployee} from '../redux/actions/employeeActions';
 
 function Login() {
   const initialValues = { username: "", email: "", password: "" };
@@ -16,9 +18,11 @@ function Login() {
   const [isAuthenticated,setIsAuthenticated]= useState(false);
   const navigate=useNavigate();
 
-  useEffect(()=>{
-    // console.log(formErrors)
-    // console.log(formValues);
+  let employeeObj= useSelector((state)=>state.employee);
+  const dispatch= useDispatch();
+  console.log(employeeObj);
+  const fetchEmployee=()=>{
+
     const jwt=localStorage.getItem('jwt');
     if (Object.keys(formErrors).length ===0 && isSubmit) {
       console.log("after api")
@@ -31,7 +35,8 @@ function Login() {
           password:`${formValues.password}`
         })
         .then(function (response) {
-            
+          // console.log(response.data);
+          dispatch(loggedInEmployee(response.data));
           const role=response.data.authorities[0].authority;
           const token=(response.headers.authorization);
           
@@ -57,9 +62,15 @@ function Login() {
           formValues.password='';
           
         });
-    
-    
+      }
   }
+
+  useEffect(()=>{
+    // console.log(formErrors)
+    // console.log(formValues);
+    fetchEmployee();
+    
+  
     
   },[formErrors])
 

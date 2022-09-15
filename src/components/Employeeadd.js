@@ -82,7 +82,8 @@ const EmployeeAdd=()=> {
               setPassword("");
               setLastname("");
               // setMessage("User successfully created");
-              toast("User successfully created",{autoClose:2000,position:"top-center"})
+              toast.success("User successfully created",{autoClose:2000,position:"top-center"})
+              
 
             }
            else if(response.status==404){
@@ -156,11 +157,11 @@ const EmployeeAdd=()=> {
           onChange={(e) => setEmail(e.target.value)}
         /></td>
                 <td className="lableemployee">Employee Gender :</td>
-                <td><select class="mychoice" id="SelectUserChoice">
+                <td><select class="mychoice" value={gender}id="SelectUserChoice">
       <option value="dontUseMe">-Select a value-</option>
-      <option value="myoption1">Male</option>
-      <option value="myoption2">Female</option>
-      <option value="myoption3">Others</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="others">Others</option>
       onChange={(e) => setGender(e.target.value)}
     </select></td>
             </tr>

@@ -1,15 +1,18 @@
 import React from 'react';
 import './WelcomeSection.css';
 import pic from './../assets/MicrosoftTeams-image.png'
+import {useSelector} from "react-redux";
 
 function WelcomeSection() {
+  let employeeObj= useSelector((state)=>state.employee);
+  const name=(employeeObj.employee.firstName);
   return (
     <div class="Welcome">
     <div class="WelcomeSection">
       <div class="Welcomeclass">
       <div class="WelcomeNote">
         <p class="headname">
-          Hi,Vikas
+          Hi,{name}
         </p>
         <p class="textmsg">
           This is your Employee management dashboard . Look around and act.
