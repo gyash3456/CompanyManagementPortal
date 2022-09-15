@@ -3,6 +3,10 @@ import { useState, useEffect } from 'react';
 import {Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './EmployeeDetail.css';
+import { confirmAlert } from 'react-confirm-alert'; // Import
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import 'react-confirm-alert/src/react-confirm-alert.css'; // Import css
 import pic1 from './../assets/edit.svg';
 import pic2 from './../assets/delete-icon.svg';
 import pic3 from './../assets/search.svg';
@@ -18,9 +22,29 @@ import Footer from './Footer';
 
 function EmployeeDetail() {
     const [userDetails,setUserDetails]=useState([]);
-    const [message,setMessage]= useState([]);
+    const [message,setMessage]= useState(true);
     const [searchTerm,setSearchTerm]= useState("");
     const navigate= useNavigate();
+
+
+    const submit = (userid) => {
+        confirmAlert({
+           
+            title: 'Confirm to delete',
+            message: 'Are you sure to do this.',
+            buttons: [
+                {
+                label: 'Yes',
+                onClick:()=>deleteUser(userid)
+                },
+                {
+                label: 'No',
+                onClick: () => ('Click No')
+                }
+            ]
+        });
+      };
+
 
     useEffect(()=>{
             axios.get('/landingpage/admin/').then(function(response){
@@ -39,11 +63,14 @@ function EmployeeDetail() {
     const deleteUser=(userid)=>{
         axios.delete(`/landingpage/admin/${userid}`)
         .then(function(response){
-            console.log(response.status)
-            setMessage("User deleted successfully")
+            console.log(response.status);
+            setMessage(!message);
+            
+            toast.success("User successfully deleted",{autoClose:2000,position:"top-center"})
 
         }).catch(function(err){
-            setMessage("Some internal error")
+            setMessage(!message);
+            toast.error("Some internal error",{autoClose:2000,position:"top-center"})
             console.log(err);
         })
     }
@@ -115,7 +142,7 @@ function EmployeeDetail() {
                                 <td>{val.mobile}</td>
                                 <td>{val.designation}</td>
                                 <td><button className="emp-btn" onClick={()=>getUser(val.emp_id)}><img className='emp-edit-img' src={pic1} /></button>
-                                 <button className="emp-btn"onClick={()=>deleteUser(val.emp_id)}>
+                                 <button className="emp-btn"onClick={()=>submit(val.emp_id)}>
                                 <img className='emp-delete-img' src={pic2} />
                                 </button> 
                                 </td>
@@ -125,6 +152,7 @@ function EmployeeDetail() {
                 </table>
                 <div className="message">{message ? <p>{message}</p> : null}</div>
             </div>
+            <ToastContainer/>
         </div>
         <Footer></Footer>
         </>
