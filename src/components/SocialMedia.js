@@ -41,7 +41,7 @@ function SocialMedia() {
   </div>
 
       </div>
-      <div class="soc-icons">
+      {/* <div class="soc-icons">
       
         <div class="soc-space">
         <a href="https://www.instagram.com/accounts/login/?next=/mlesystems/" target="_blank"><img className='socialimg'src={pic1} alt=""/></a>
@@ -57,7 +57,7 @@ function SocialMedia() {
         </div>
       
 
-      </div>
+      </div> */}
 
 
       

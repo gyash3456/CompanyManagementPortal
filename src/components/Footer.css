@@ -1,3 +1,7 @@
+.footer-main{
+    margin-top: 26px;
+}
+
 footer{
     background-color: rgb(0, 0, 0);
    
@@ -6,6 +10,7 @@ footer{
     display:flex;
     justify-content: center;
     gap:1rem;
+    bottom:0px;
 }
 
 

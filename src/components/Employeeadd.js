@@ -115,13 +115,7 @@ const EmployeeAdd=()=> {
 
         <table className="tableadddetail">
             <tr>
-                <td className="lableemployee">Employee ID :</td>
-                <td><input
-          type="text"
-          value={id}
-          placeholder="EmployeeID"
-          onChange={(e) => setId(e.target.value)}
-        /></td>
+                
                 <td className="lableemployee"><p>Employee Name <sup>*</sup>:</p></td>
                 <td> <input
           type="text"
@@ -130,24 +124,16 @@ const EmployeeAdd=()=> {
           placeholder="Name"
           onChange={(e) => setName(e.target.value)}
         /></td>
-            </tr>
-            <tr>
-                <td className="lableemployee">LastName :</td>
-                <td><input
-          type="text"
-          value={lastname}
-          placeholder="Lastname"
-          onChange={(e) => setLastname(e.target.value)}
-        /></td>
-                <td className="lableemployee"><p>Password <sup>*</sup> :</p></td>
+         <td className="lableemployee">Employee Phone :</td>
                 <td> <input
-          type="password"
-          value={password}
-          placeholder="Password"
-          required
-          onChange={(e) => setPassword(e.target.value)}
+          type="text"
+          value={phone}
+          placeholder="Phone"
+          onChange={(e) => setPhone(e.target.value)}
         /></td>
+        
             </tr>
+            
             <tr>
                 <td className="lableemployee"><p>Employee Email <sup>*</sup> :</p></td>
                 <td><input
@@ -157,23 +143,26 @@ const EmployeeAdd=()=> {
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         /></td>
-                <td className="lableemployee">Employee Gender :</td>
-                <td><select class="mychoice" value={gender}id="SelectUserChoice">
+        <td className="lableemployee"><p>Password <sup>*</sup> :</p></td>
+                <td> <input
+          type="password"
+          value={password}
+          placeholder="Password"
+          required
+          onChange={(e) => setPassword(e.target.value)}
+        /></td>
+              
+            </tr>
+            <tr>
+            <td className="lableemployee">Employee Gender :</td>
+                <td><select class="mychoice" value={gender}id="SelectUserChoice"onChange={(e) => setGender(e.target.value)}>
       <option value="dontUseMe">-Select a value-</option>
       <option value="male">Male</option>
       <option value="female">Female</option>
       <option value="others">Others</option>
-      onChange={(e) => setGender(e.target.value)}
+      
     </select></td>
-            </tr>
-            <tr>
-                <td className="lableemployee">Employee Phone :</td>
-                <td> <input
-          type="text"
-          value={phone}
-          placeholder="Phone"
-          onChange={(e) => setPhone(e.target.value)}
-        /></td>
+               
                 <td className="lableemployee">Employee Address :</td>
                 <td><input
           type="text"
@@ -232,18 +221,18 @@ const EmployeeAdd=()=> {
             </tr>
             <tr>
                 <td className="lableemployee">Blood Group :</td>
-                <td><select class="mychoice" id="SelectUserChoice">
+                <td><select class="mychoice" id="SelectUserChoice"value={bloodgroup} onChange={(e) => setBloodgrup(e.target.value)}>
       <option value="dontUseMe">-Select a value-</option>
-      <option value={bloodgroup}>A+</option>
-      <option value={bloodgroup}>A-</option>
-      <option value={bloodgroup}>AB+</option>
-      <option value={bloodgroup}>AB-</option>
-      <option value={bloodgroup}>B+</option>
-      <option value={bloodgroup}>B-</option>
-      <option value={bloodgroup}>O+</option>
-      <option value={bloodgroup}>O-</option>
+      <option value={"A+"}></option>
+      <option value={"A-"}>A-</option>
+      <option value={"AB+"}>AB+</option>
+      <option value={"AB-"}>AB-</option>
+      <option value={"B+"}>B+</option>
+      <option value={"B-"}>B-</option>
+      <option value={"O+"}>O+</option>
+      <option value={"O-"}>O-</option>
       
-      onChange={(e) => setBloodgrup(e.target.value)}
+      
     </select></td>
                 <td className="lableemployee">Profile Photo :</td>
                 <td><input className="photo"

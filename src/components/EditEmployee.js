@@ -169,7 +169,7 @@ function EditEmployee() {
                   style={{borderBottom:enableBorder}}
                 /></td>
                 <td className="lableemployee">Employee Gender :</td>
-                <td><select class="mychoice" id="SelectUserChoice" name= "gender"onChange={handleFormChange}disabled={disabled}>
+                <td><select class="mychoice" id="SelectUserChoice" name= "gender"onChange={handleFormChange}value={resObject.gender} disabled={disabled}>
                   <option disabled={disabled} value="dontUseMe">-Select a value-</option>
                   <option disabled={disabled} value="male">Male</option>
                   <option disabled={disabled} value="female">Female</option>
@@ -269,16 +269,16 @@ function EditEmployee() {
               </tr>
               <tr>
                 <td className="lableemployee">Blood Group :</td>
-                <td><select class="mychoice" id="SelectUserChoice" name="blood_group" onChange={handleFormChange} disabled={disabled}>
+                <td><select class="mychoice" id="SelectUserChoice" name="blood_group" value={resObject.blood_group}onChange={handleFormChange} disabled={disabled}>
                   <option disabled={disabled} value="dontUseMe">-Select a value-</option>
-                  <option disabled={disabled} value="1">A+</option>
-                  <option disabled={disabled} value="2">A-</option>
-                  <option disabled={disabled} value="3">AB+</option>
-                  <option disabled={disabled} value="4">AB-</option>
-                  <option disabled={disabled} value="5">B+</option>
-                  <option disabled={disabled} value="6">B-</option>
-                  <option disabled={disabled} value="7">O+</option>
-                  <option disabled={disabled} value="8">O-</option>
+                  <option disabled={disabled} value="A+">A+</option>
+                  <option disabled={disabled} value="A-">A-</option>
+                  <option disabled={disabled} value="AB+">AB+</option>
+                  <option disabled={disabled} value="AB-">AB-</option>
+                  <option disabled={disabled} value="B+">B+</option>
+                  <option disabled={disabled} value="B-">B-</option>
+                  <option disabled={disabled} value="O+">O+</option>
+                  <option disabled={disabled} value="O-">O-</option>
 
                  
                   disabled={disabled}
